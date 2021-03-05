@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <h2>JavaScript Scope</h2>
+
+    <p>A GLOBAL variable can be accessed from any script or function.</p>
+
+    <p id = "demo"></p>
+    <p id = "let"></p>
+    <p id = "loop"></p>
+    <p id = "loop2"></p>
+    <p id = "hoisting"></p>
+
+    <script>
+        // Global variable
+        var carName = "Volvo"
+        myFunction();
+
+        function myFunction(){
+            // Function scope
+            var carName = "Hyundai";
+            document.getElementById("demo").innerHTML =
+            "I can display " + carName;
+        }
+
+        var x = 10;
+        {
+            //var x = 2;
+            let x = 2;
+        }
+        document.getElementById("let").innerHTML = x;
+
+
+        var i = 5;
+        for (var i = 0; i < 10; i++){
+            //some statements
+        }
+        document.getElementById("loop").innerHTML = i;
+
+        var i = 5;
+        for (let i = 0; i < 10; i++){
+            //some statements
+        }
+        document.getElementById("loop2").innerHTML = i;
+
+        // You can use the variable before it is declared:
+        phoneName = "Iphone";
+        alert(phoneName)
+        var phoneName;
+
+
+        try {
+            carName = "Volvo";
+            let carName;
+            document.getElementById("hoisting").innerHTML = carName;
+        }
+        catch(err){
+            document.getElementById("hoisting").innerHTML = 
+            err.name + ": " + err.message;
+        }
+
+
+    </script>
+
+
+</body>
+</html>
