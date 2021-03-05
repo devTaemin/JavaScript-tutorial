@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+
+    <p id = "demo4"></p>
+
+    <p id = "demo5"></p>
+
+    <p id = "demo6"></p>
+
+
+    <script>
+        var x = 5;
+        var y = 6;
+        var z = x + y;
+
+        document.getElementById("demo1").innerHTML = "x stores the value " + x;
+        document.getElementById("demo2").innerHTML = "y stores the value " + y;
+        document.getElementById("demo3").innerHTML = "z stores the value " + z;
+
+        var price1 = 5;
+        var price2 = 6;
+        var total = price1 + price2;
+
+        document.getElementById("demo4").innerHTML = "The total is: " + total;
+
+        var carName = "Volvo";
+        document.getElementById("demo5").innerHTML = carName;
+
+        // If you re-declare a JavaScript variable, it will not lose its value.
+        var phoneName = "Iphone";
+        var phoneName
+        document.getElementById("demo6").innerHTML = phoneName;
+
+    </script>
+</body>
+</html>
