@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+    <p id = "demo12"></p>
+    <p id = "demo13"></p>
+    <p id = "demo14"></p>
+
+    <button onclick = "myFunction()">Try it</button>
+    <p id = "demo15">Please visit Microsoft!</p>
+
+
+    <button onclick = "myFunction2()">Try it</button>
+    <p id = "demo16">Please visit Microsoft and Microsoft!</p>
+
+    <button onclick = "myFunction3()">Try it</button>
+    <p id = "demo17">Hello World!</p>
+
+
+    <button onclick = "myFunction4()">Try it</button>
+    <p id = "demo18">Hello World!</p>
+    <p id = "demo19"></p>
+
+    <p><strong>Note:</strong> The trim() method is not supported in Internet Explorer 8 and earlier versions.</p>
+    <button onclick = "myFunction5()">Try it</button>
+    <p id = "demo20"></p>
+
+
+    <p id = "demo21"></p>
+    <p id = "demo22"></p>
+    <p id = "demo23"></p>
+    <p id = "demo24"></p>
+    <p id = "demo25"></p>
+    <p id = "demo26"></p>
+
+    <script>
+        var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var sln = txt.length;
+        document.getElementById("demo").innerHTML = sln;
+
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.indexOf("locate");
+        var pos2 = str.lastIndexOf("locate");
+        var pos3 = str.indexOf("John");
+        var pos4 = str.indexOf("locate", 15);
+        var pos5 = str.lastIndexOf("locate", 15);
+        var pos6 = str.search("locate");
+        
+        var fruit = "Apple, Banana, Kiwi";
+        var res = fruit.slice(7,13);
+        var res1 = fruit.slice(-12,-6);
+        var res2 = fruit.slice(7);
+        var res3 = fruit.slice(-12);
+        var res4 = fruit.substring(7,13);
+        var res5 = fruit.substr(7,6);
+
+        str2 = "Please visit Microsoft and Microsoft!";
+        var n = str2.replace("Microsoft", "W3Schools");
+
+        var text1 = "Hello";
+        var text2 = "World!";
+        var text3 = text1.concat(" ", text2);
+        document.getElementById("demo19").innerHTML = text3;
+
+
+        
+        function myFunction() {
+            var str = document.getElementById("demo15").innerHTML;
+            var txt = str.replace(/MICROSOFT/i, "W3Schools");
+            document.getElementById("demo15").innerHTML = txt;
+        };
+
+        function myFunction2(){
+            var str = document.getElementById("demo16").innerHTML;
+            var txt = str.replace(/Microsoft/g, "W3Schools");
+            document.getElementById("demo16").innerHTML = txt;
+        };
+
+        function myFunction3(){
+            var str = document.getElementById("demo17").innerHTML;
+            document.getElementById("demo17").innerHTML = str.toUpperCase();
+        };
+
+        function myFunction4(){
+            var str = document.getElementById("demo18").innerHTML;
+            document.getElementById("demo18").innerHTML = str.toLowerCase();
+        }
+
+        function myFunction5(){
+            var str = "        Hello World!        ";
+            alert(str.trim());
+        }
+
+  
+        document.getElementById("demo2").innerHTML = pos;
+        document.getElementById("demo3").innerHTML = pos2;
+        document.getElementById("demo4").innerHTML = pos3;
+        document.getElementById("demo5").innerHTML = pos4;
+        document.getElementById("demo6").innerHTML = pos5;
+        document.getElementById("demo7").innerHTML = pos6;
+        document.getElementById("demo8").innerHTML = res;
+        document.getElementById("demo9").innerHTML = res1;
+        document.getElementById("demo10").innerHTML = res2;
+        document.getElementById("demo11").innerHTML = res3;
+        document.getElementById("demo12").innerHTML = res4;
+        document.getElementById("demo13").innerHTML = res5;
+        document.getElementById("demo14").innerHTML = n;
+
+        let s = "5";
+        let v = "5";
+        s = s.padStart(4,0);
+        v = v.padEnd(4,0);
+        document.getElementById("demo21").innerHTML = s;
+        document.getElementById("demo22").innerHTML = v;
+
+
+        var h = "HELLO WORLD";
+        document.getElementById("demo23").innerHTML = h.charCodeAt(0); //UniCode
+        document.getElementById("demo24").innerHTML = h[0];
+
+        var l = "a,b,c,d,e,f";
+        var arr = l.split(",");
+        document.getElementById("demo25").innerHTML = arr[2];
+
+        var word = "Hello";
+        var letter = word.split("");
+        document.getElementById("demo26").innerHTML = letter[4];
+
+
+    </script>
+    
+
+</body>
+</html>
