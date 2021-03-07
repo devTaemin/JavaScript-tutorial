@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <p>JavaScript will try to convert strings to numbers in all numeric operations:</p>
+    <p id = "demo8"></p>
+
+    <p>NaN is a JavaScript reserved word indicating that a number is not a legal number.</p>
+    <p id = "demo9"></p>
+
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+    <p id = "demo12"></p>
+    <p id = "demo13"></p>
+    <p id = "demo14"></p>
+    <p id = "demo15"></p>
+    <p id = "demo16"></p>
+    <p id = "demo17"></p>
+    <p id = "demo18"></p>
+    <p id = "demo19"></p>
+
+
+    <script>
+        var x = 3.14;
+        var y = 3;
+        var w = 123e5;
+        var z = 123e-5;
+        var num = 999999999999999;
+        var num1 = 9999999999999999;
+        var f = 0.2 + 0.1;
+        var f1 = (0.2*10 + 0.1*10) / 10;
+        var num2 = 10;
+        var str1 = "20";
+        var num3 = 20;
+        var str2 = "The result is: " + num2 + num3;
+        var res = num2 + num3 + str1;
+        var str3 = "2";
+        var num4 = str1 / str3;
+        var e = 100 / "Apple";
+        var myNumber = 2;
+        var txt = "";
+        var inf1 = 2 / 0;
+        var inf2 = -2 / 0;
+        var hex = 0xFF;
+        var origin = 32;
+        var obj = new Number(32);
+
+  
+        
+        document.getElementById("demo").innerHTML = x + "<br>" + y;
+        document.getElementById("demo1").innerHTML = w + "<br>" + z;
+        document.getElementById("demo2").innerHTML = num + "<br>" + num1;
+        document.getElementById("demo3").innerHTML = f;
+        document.getElementById("demo4").innerHTML = f1;
+        document.getElementById("demo5").innerHTML = num2 + str1;
+        document.getElementById("demo6").innerHTML = str2;
+        document.getElementById("demo7").innerHTML = res;
+        document.getElementById("demo8").innerHTML = num4;
+        document.getElementById("demo9").innerHTML = e;
+        document.getElementById("demo10").innerHTML = isNaN(e);
+        document.getElementById("demo11").innerHTML = e + 5;
+        document.getElementById("demo12").innerHTML = e + "5";
+        document.getElementById("demo13").innerHTML = typeof e;
+        while (myNumber != Infinity){
+            myNumber = myNumber * myNumber;
+            txt = txt + myNumber + "<br>";
+        }
+        document.getElementById("demo14").innerHTML = txt;
+        document.getElementById("demo15").innerHTML =
+        inf1 + "<br>" + inf2;
+        document.getElementById("demo16").innerHTML = typeof Infinity;
+        document.getElementById("demo17").innerHTML = hex;
+        document.getElementById("demo18").innerHTML =
+        "32 = " + "<br>" +
+        " Decimal " + origin.toString(10) + "<br>" +
+        " Hexadecimal " + origin.toString(16) + "<br>" +
+        " Octal " + origin.toString(8) + "<br>" +
+        " Binary " + origin.toString(2);
+        document.getElementById("demo19").innerHTML = 
+        (origin == obj) + "<br>" +
+        (origin === obj);
+
+
+    </script>
+</body>
+</html>
