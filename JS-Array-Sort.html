@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+
+    <button onclick = "myFunction()">Ascending</button>
+    <button onclick = "myFunction2()">Descending</button>
+    <p id = "demo3"></p>
+
+
+    <p id = "demo4"></p>
+    <button onclick = "myFunction3()">Sort Alphabetically</button>
+    <button onclick = "myFunction4()">Sort Numerically</button>
+    <p id = "demo5"></p>
+
+
+    <p>Random Sorting</p>
+    <button onclick = "myFunction5()">Try it</button>
+    <p id = "demo6"></p>
+
+
+    <h2>The Fisher Yates Method</h2>
+
+    <button onclick = "myFunction6()">Try it</button>
+    <p id = "demo7"></p>
+
+
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+
+    <h2>Sorting Object Arrays</h2>
+    <button onclick = "myObjectSort">Sort</button>
+    <p id = "demo12"></p>
+    <p id = "demo13"></p>
+    <p id = "demo14"></p>
+    <p id = "demo15"></p>
+    <p id = "demo16"></p>
+    <p id = "demo17"></p>
+    <p id = "demo18"></p>
+    <p id = "demo19"></p>
+
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits;
+        fruits.sort();
+        document.getElementById("demo1").innerHTML = fruits;
+        fruits.reverse();
+        document.getElementById("demo2").innerHTML = fruits;
+
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo3").innerHTML = points;
+
+        function myFunction(){
+            points.sort(function(a,b){return a - b});
+            document.getElementById("demo3").innerHTML = points;
+        }
+
+        function myFunction2(){
+            points.sort(function(a,b){return b - a});
+            document.getElementById("demo3").innerHTML = points;
+        }
+
+        document.getElementById("demo4").innerHTML = 
+        "<p>Click the buttons to sort the array alphabetically or numerically.</p>"
+
+        var arr = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo5").innerHTML = arr;
+
+        function myFunction3(){
+            var sort1 = arr.sort();
+            document.getElementById("demo5").innerHTML = sort1;
+        }
+
+        function myFunction4(){
+            var sort2 = arr.sort(function(a,b){return a-b});
+            document.getElementById("demo5").innerHTML = sort2;
+        }
+
+        document.getElementById("demo6").innerHTML = arr;
+        function myFunction5(){
+            arr.sort(function(a,b){return 0.5 - Math.random()});
+            document.getElementById("demo6").innerHTML = arr;
+        }
+
+        var point = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo7").innerHTML = point;
+        function myFunction6(){
+            var i, j, k;
+            for (i = point.length - 1; i > 0; i--){
+                j = Math.floor(Math.random() * i);
+                k = point[i];
+                point[i] = point[j];
+                point[j] = k;
+            }
+            document.getElementById("demo7").innerHTML = point;
+        }
+
+
+        document.getElementById("demo8").innerHTML = Math.floor(Math.random() * 2);
+
+        document.getElementById("demo9").innerHTML = myArrayMax(point);
+        document.getElementById("demo10").innerHTML = myArrayMin(point);
+        function myArrayMax(arr){
+            return Math.max.apply(null,arr); //Math.max(1,2,3) == Math.max.apply(null, [1,2,3])
+        }
+
+        function myArrayMin(arr){
+            return Math.min.apply(null,arr);
+        }
+
+        function myArrayMax2(arr){
+            var len = arr.length;
+            var max = -Infinity;
+            while(len--){
+                if (arr[len] > max){
+                    max = arr[len]
+                }
+            }
+            return max;
+        }
+
+        function myArrayMin2(arr){
+            var len = arr.length;
+            var min = Infinity;
+            while(len--){
+                if (arr[len] < min){
+                    min = arr[len];
+                }
+            }
+            return min;
+        }
+
+        document.getElementById("demo11").innerHTML = 
+        myArrayMin(point) + "<br>" +
+        myArrayMax(point);
+
+        var cars = [
+            {type : "Volvo", year : 2016},
+            {type : "Saab", year : 2001},
+            {type : "BMW", year : 2010}
+        ];
+
+        document.getElementById("demo12") = displayCars();
+
+        function myObjectSort(){
+            cars.sort(function(a,b){return a.year - b.year});
+            displayCars();
+        }
+
+        function displayCars(){
+            
+            var len = cars.length;
+            var txt = ""
+            var i
+            for (i = 0; i < len; i++){
+                txt += cars[i].type+ " " + cars[i].year + "<br>";
+            }
+            document.getElementById("demo12").innerHTML = txt;
+        }
+        var txt = ""
+        txt += cars[0].year + " " + cars[1].type + "<br>"
+        document.getElementById("demo13").innerHTML = txt;
+    </script>
+
+
+
+</body>
+
+</html>
