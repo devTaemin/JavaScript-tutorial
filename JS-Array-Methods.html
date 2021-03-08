@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <button onclick = "myFunction()">Try it</button>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+
+
+    <button onclick = "myFunction2()">Try it</button>
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+    <p id = "demo12"></p>
+
+    <p id = "demo13"></p>
+    <p id = "demo14"></p>
+    <p id = "demo15"></p>
+    <p id = "demo16"></p>
+    <p id = "demo17"></p>
+    <p id = "demo18"></p>
+    <p id = "demo19"></p>
+    <p id = "demo20"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits;
+        document.getElementById("demo1").innerHTML = fruits.toString();
+        document.getElementById("demo2").innerHTML = fruits.join(" * ");
+
+        var fruit = fruits.pop();
+        document.getElementById("demo3").innerHTML = fruit;
+
+        fruits.push("kiwi");
+        document.getElementById("demo4").innerHTML = fruits;
+
+        fruits.shift();
+        document.getElementById("demo5").innerHTML = fruits;
+
+        fruits.unshift("Lemon");
+        document.getElementById("demo6").innerHTML = fruits;
+
+        fruits[fruits.length] = "Banana";
+        document.getElementById("demo7").innerHTML = fruits;
+
+        var temp = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo8").innerHTML = 
+        "Original Array:" + "<br>" + temp;
+        
+        
+        function myFunction(){
+            temp.splice(2,0,"Lemon","Kiwi");
+            document.getElementById("demo9").innerHTML =
+            "New Array:" + "<br>" + temp;
+        }
+
+        var temp2 = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo10").innerHTML =
+        "Original Array:" + "<br>" + temp2;
+
+        function myFunction2(){
+            var rmv = temp2.splice(2, 2,"Lemon", "Kiwi")
+            document.getElementById("demo11").innerHTML =
+            "New Array:" + "<br>" + temp2;
+            document.getElementById("demo12").innerHTML =
+            "Removed items:" + "<br>" + rmv;
+        }
+
+        var temp3 = ["Banana", "Orange", "Apple", "Mango"];
+        temp3.splice(0,1);
+        document.getElementById("demo13").innerHTML = temp3;
+
+        temp3.splice(temp3.length-1, 1);
+        document.getElementById("demo14").innerHTML = temp3;
+
+        var arr1 = ["Cecilie", "Lone"];
+        var arr2 = ["Emil", "Tobias", "Linus"];
+        var arr3 = ["Robin", "Morgan"];
+        var myChildrens = arr1.concat(arr2, arr3);
+        var myChildren = arr1.concat("Joomin");
+        document.getElementById("demo15").innerHTML = 
+        myChildren + "<br>" + myChildrens;
+
+        
+        document.getElementById("demo16").innerHTML = fruits;
+        var citrus = fruits.slice(1,fruits.length);
+        document.getElementById("demo17").innerHTML =
+        fruits + "<br><br>" + citrus;
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
