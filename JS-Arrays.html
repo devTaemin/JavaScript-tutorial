@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    
+    <button onclick="myFunction1()">Try it</button>
+    <p id = "demo8"></p>
+
+    <p>If you use a named index when accessing an array, <br>
+        JavaScript will redefine the array to a standard object,<br> 
+        and some array methods and properties will produce undefined or incorrect results.</p>
+
+    <p>
+        In JavaScript, arrays use numbered indexes. <br>
+        In JavaScript, objects use named indexes
+    </p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+    <p id = "demo12"></p>
+
+    <script>
+        var cars = ["Saab", "Volvo", "BMW"];
+        var cars1 = new Array("Saab", "Volvo", "BMW");
+        var person = {firstName : "Taemin", lastName : "Im", age : 28};
+        var fruits, flen, text, i;
+        fruits = ["Banana", "Orange", "Apple", "Mango"];
+        flen = fruits.length;
+        text = "<ul>";
+        text1 = "<ul>";
+        var persons = [];
+        persons[0] = "John";
+        persons[1] = "Terry";
+        persons[2] = "Mirae";
+
+
+        document.getElementById("demo").innerHTML = cars;
+        document.getElementById("demo1").innerHTML = cars1;
+        document.getElementById("demo2").innerHTML = cars[1];
+
+        cars[2] = "Opel";
+        document.getElementById("demo3").innerHTML = cars;
+        document.getElementById("demo4").innerHTML = 
+        typeof cars + "<br>"+
+        typeof person;
+        document.getElementById("demo5").innerHTML = cars.length;
+
+        for (i = 0; i < flen; i++){
+            text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("demo6").innerHTML = text;
+
+        fruits.forEach(myFunction);
+        text1 += "<ul>";
+        document.getElementById("demo7").innerHTML = text1;
+
+        document.getElementById("demo8").innerHTML = fruits;
+
+        document.getElementById("demo9").innerHTML = 
+        persons[0] + " " + persons.length;
+
+        document.getElementById("demo10").innerHTML = Array.isArray(fruits);
+        document.getElementById("demo11").innerHTML = myFunction2(fruits);
+        //document.getElementById("demo12").innerHTML = fruits.constructor.toString().indexOf("Array")
+        document.getElementById("demo12").innerHTML = fruits instanceof Array;
+
+        function myFunction(value){
+            text1 += "<li>" + value + "</li>";
+        }
+
+        function myFunction1(){
+            //fruits.push("lemon");
+            var len = fruits.length;
+            fruits[len] = "lemon";
+            document.getElementById("demo8").innerHTML = fruits;
+        }
+
+        function myFunction2(myArray){
+            return myArray.constructor.toString().indexOf("Array") > -1;
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
