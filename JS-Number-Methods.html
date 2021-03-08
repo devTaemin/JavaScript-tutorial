@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+
+    <script>
+        var x = 123;
+        var y = 9.656;
+        var z = new Date("2017-09-30");
+        var max = Number.MAX_VALUE;
+        var min = Number.MIN_VALUE;
+        var pos = Number.POSITIVE_INFINITY;
+        var pos1 = 1 / 0;
+        var neg = Number.NEGATIVE_INFINITY;
+        var neg1 = -1 / 0;
+        var nan = Number.NaN;
+        var nan1 = 100 / "Apple";
+
+
+
+        document.getElementById("demo").innerHTML =
+        x.toString() + "<br>" +
+        (123).toString() + "<br>" +
+        (100 + 23).toString();
+
+        document.getElementById("demo1").innerHTML =
+        y.toExponential() + "<br>" +
+        y.toExponential(2) + "<br>" +
+        y.toExponential(4) + "<br>" +
+        y.toExponential(6);
+
+        document.getElementById("demo2").innerHTML =
+        y.toFixed(0) + "<br>" +
+        y.toFixed(2) + "<br>" +
+        y.toFixed(4) + "<br>" +
+        y.toFixed(6);
+
+        document.getElementById("demo3").innerHTML =
+        y.toPrecision() + "<br>" +
+        y.toPrecision(2) + "<br>" +
+        y.toPrecision(4) + "<br>" +
+        y.toPrecision(6);
+
+        document.getElementById("demo4").innerHTML =
+        x.valueOf() + "<br>" +
+        (123).valueOf() + "<br>" +
+        (100 + 23).valueOf();
+
+        document.getElementById("demo5").innerHTML =
+        Number(true) + "<br>" +
+        Number(false) + "<br>" +
+        Number("10") + "<br>" +
+        Number("   10") + "<br>" +
+        Number("10   ") + "<br>" +
+        Number("  10  ") + "<br>" +
+        Number("10.33") + "<br>" +
+        Number("10,33") + "<br>" +
+        Number("10 33") + "<br>" +
+        Number("John");
+
+        document.getElementById("demo6").innerHTML =
+        z + "<br>" +
+        Number(z);
+
+        document.getElementById("demo7").innerHTML =
+        parseInt("10") + "<br>" +
+        parseInt("10.33") + "<br>" +
+        parseInt("10 6") + "<br>" +
+        parseInt("10 years") + "<br>" +
+        parseInt("years 10");
+
+        document.getElementById("demo8").innerHTML =
+        parseFloat("10") + "<br>" +
+        parseFloat("10.33") + "<br>" +
+        parseFloat("10 6") + "<br>" +
+        parseFloat("10 years") + "<br>" +
+        parseFloat("years 10");
+
+        document.getElementById("demo9").innerHTML =
+        max + "<br>" +
+        pos + "<br>" +
+        neg + "<br>" +
+        min + "<br>" +
+        pos1 + "<br>" +
+        neg1 + "<br>" +
+        nan + "<br>" +
+        nan1 + "<br>";
+
+        document.getElementById("demo10").innerHTML =
+        "Number Properties cannot be used on Variables";
+    </script>
+</body>
+</html>
