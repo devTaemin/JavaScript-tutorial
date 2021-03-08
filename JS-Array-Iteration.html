@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <h2>Array.forEach()</h2>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+
+
+    <h2>Array.map()</h2>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+
+    <h2>Array.filter()</h2>
+    <p id = "demo4"></p>
+
+    <h2>Array.reduce()</h2>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+
+    <h2>Array.reduceRight()</h2>
+    <p id = "demo7"></p>
+
+    <h2>Array.every()</h2>
+    <p id = "demo8"></p>
+
+    <h2>Array.some()</h2>
+    <p id = "demo9"></p>
+
+    <h2>Array.indexOf()</h2>
+    <p id = "demo10"></p>
+
+    <h2>Array.lastIndexOf()</h2>
+    <p id = "demo11"></p>
+
+    <h2>Array.find()</h2>
+    <p id = "demo12"></p>
+
+    <h2>Array.findIndex()</h2>
+    <p id = "demo13"></p>
+
+
+    <script>
+        var txt = "";
+        var txt2 = "";
+        var numbers = [45, 4, 9, 16, 25];
+        numbers.forEach(myFunction);
+        numbers.forEach(myFunction2)
+        document.getElementById("demo").innerHTML = txt;
+        document.getElementById("demo1").innerHTML = txt2;
+
+        function myFunction(value, index, array){
+            txt += value + "<br>";
+        }
+
+        function myFunction2(value){
+            txt2 += value + "<br>";
+        }
+
+        var numbers1 = [45, 4, 9, 16, 25];
+        var numbers2 = numbers1.map(myFunction3);
+
+        function myFunction3(value, index, array){
+            return value * 2;
+        }
+        document.getElementById("demo2").innerHTML = numbers1;
+        document.getElementById("demo3").innerHTML = numbers2;
+
+
+        var over18 = numbers.filter(myFunction4);
+        function myFunction4(value, index, array){
+            return value > 18;
+        }
+        document.getElementById("demo4").innerHTML = over18;
+
+
+        var sum = numbers1.reduce(myFunction5);
+        var sum2 = numbers1.reduce(myFunction6);
+        function myFunction5(total, value, index, array){
+            return total + value;
+        }
+        function myFunction6(total, value){
+            return total + value;
+        }
+        document.getElementById("demo5").innerHTML = sum;
+        document.getElementById("demo6").innerHTML = sum2;
+
+
+        var sum3 = numbers1.reduceRight(myFunction7);
+        function myFunction7(total, value, index, array){
+            return total + value;
+        }
+        document.getElementById("demo7").innerHTML = sum3;
+
+        var allOver18 = numbers1.every(myFunction8);
+        function myFunction8(value, index, array){
+            return value > 18;
+        }
+        document.getElementById("demo8").innerHTML = allOver18;
+
+        var someOver18 = numbers1.some(myFunction9);
+        function myFunction9(value, index, array){
+            return value > 18;
+        }
+        document.getElementById("demo9").innerHTML = someOver18;
+
+        var fruits = ["Apple", "Orange", "Apple", "Mango"];
+        var a = fruits.indexOf("Apple");
+        var b = fruits.lastIndexOf("Apple");
+        document.getElementById("demo10").innerHTML = a;
+        document.getElementById("demo11").innerHTML = b;
+
+        var numbers3 = [4, 9, 16, 25, 29];
+        var first = numbers3.find(myFunction10);
+        var firstIndex = numbers3.findIndex(myFunction11);
+
+        function myFunction10(value, index, array){
+            return value > 18;
+        }
+        document.getElementById("demo12").innerHTML = first;
+
+        function myFunction11(value, index, array){
+            return value > 18;
+        }
+        document.getElementById("demo13").innerHTML = firstIndex;
+
+
+    </script>
+</body>
+</html>
