@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+
+    <button onclick="document.getElementById('demo7').innerHTML = getRndInteger(0,10)">Click Me</button>
+    <p id = "demo7"></p>
+    
+    <button onclick="document.getElementById('demo8').innerHTML = getRndInteger2(0,10)">Click Me</button>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML =
+        Math.random();
+        document.getElementById("demo1").innerHTML =
+        Math.floor(Math.random() * 10); // 0 to 9
+        document.getElementById("demo2").innerHTML =
+        Math.floor(Math.random() * 11); // 0 to 10
+        document.getElementById("demo3").innerHTML =
+        Math.floor(Math.random() * 100); // 0 to 99
+        document.getElementById("demo4").innerHTML =
+        Math.floor(Math.random() * 101); // 0 to 100
+        document.getElementById("demo5").innerHTML =
+        Math.floor(Math.random() * 10) + 1; // 1 to 10
+        document.getElementById("demo6").innerHTML =
+        Math.floor(Math.random() * 100) + 1; // 1 to 100
+
+        function getRndInteger(min, max){ //0 to 9
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function getRndInteger2(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+    </script>
+</body>
+</html>
